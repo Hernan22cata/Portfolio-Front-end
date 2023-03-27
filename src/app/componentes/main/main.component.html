@@ -1,14 +1,18 @@
 <!-- Contenido principal-->
-<div class="container main centered mt-4 rounded shadow" id="inicio">
+<div class="container main centered mt-4 rounded shadow" id="inicio" *ngIf="persona">
+    
     <div class="row ">
       <div class="col-md-6 align-self-center text-center">
-        <img src="../../../assets/hc.png" class="img-fluid rounded-circle img2 mx-auto" alt="Hernan Catalini, Desarrollador Web">
+        <img src="{{persona.img}}" class="img-fluid rounded-circle img2 mx-auto" alt="Hernan Catalini, Desarrollador Web">
       </div>
-      <div class="col-md-6 text-light">
-        <p class="let fs-2 text-center">Hernán Gabriel Catalini </p>
-        <p class="let fs-2 border-top border-bottom text-center">Desarrollador Full Stack Web Junior. </p>
-        <p class="let fs-6 ">Luego de dedicar 5 años de mi vida al estudio de las ciencias de la salud encontré mi rumbo en el desarrollo web y la programación. </p>
-        <p class="let fs-6 ">Aprendí autodidactamente HTML5,CSS3 y Bootstrap pudiendo crear mis primeras web estáticas.  </p>
-        <p class="let fs-6 ">Aprendí Javascript y Ruby orientado a objetos en la primer etapa de "Argentina Programa" y en la segunda etapa #Yo programo, aprendí Angular, Java, springboot,SQL y devops.  </p>
+      <div class="col-md-6 text-light text-center">
+        <button type="button" class="btn btn-outline-light btn-lg mb-4" routerLink="/editabout/1" *ngIf="isLogged">Editar Perfil</button>
+        <p class="let fs-2 text-center" id="nombre">{{persona.nombre}} {{persona.apellido}}</p>
+        <p class="let fs-2 border-top border-bottom text-center">Desarrollador Web Full Stack Jr. </p>
+        <p class="let fs-6 ">{{persona.descripcion}}</p>
+        
       </div>
 </div>
+
+<!--Luego de dedicar 5 años de mi vida al estudio de las ciencias de la salud encontré mi rumbo en el desarrollo web y la 
+Aprendí autodidactamente HTML5,CSS3 y Bootstrap pudiendo crear mis primeras web estáticas.Aprendí Javascript y Ruby orientado a objetos en la primer etapa de "Argentina Programa" y en la segunda etapa #Yo programo, aprendí Angular, Java, springboot,SQL y devops. >-->

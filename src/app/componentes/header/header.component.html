@@ -14,12 +14,13 @@
           </div>
           <div class="row align-items-center">
             <div class="col-auto">
-              <a type="button" class="btn btn-transparent"  href="#" target="_blank" ><i class="bi bi-instagram fs-5 text-light mx-0"></i></a>
-              <a type="button" class="btn btn-transparent"  href="#" target="_blank" ><i class="bi bi-facebook fs-5 text-light mx-0"></i></a>
-              <a type="button" class="btn btn-transparent"  href="#" target="_blank" ><i class="bi bi-linkedin fs-5 text-light mx-0"></i></a>
+              <a type="button" class="btn btn-transparent"  href="https://www.instagram.com/hernangabriel_dev/" target="_blank" ><i class="bi bi-instagram fs-5 text-light mx-0"></i></a>
+              <a type="button" class="btn btn-transparent"  href="https://www.facebook.com/hernan.catalini" target="_blank" ><i class="bi bi-facebook fs-5 text-light mx-0"></i></a>
+              <a type="button" class="btn btn-transparent"  href="https://www.linkedin.com/in/hernan-cata-dev/" target="_blank" ><i class="bi bi-linkedin fs-5 text-light mx-0"></i></a>
             </div>
             <div class="col-2">
-              <button type="button" class="btn btn-primary">Login</button>
+              <button type="button" class="btn btn-success" target="_blank" (click)="login()" *ngIf="!isLogged">Login</button>
+              <button type="button" class="btn btn-danger" target="_blank" (click)="onLogOut()" *ngIf="isLogged">Salir</button>
             </div>
           </div>
         </div>

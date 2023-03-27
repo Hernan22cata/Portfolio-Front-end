@@ -1,9 +1,29 @@
 <!-- Experiencia-->
-<aside class="container main  mt-4 rounded">
-    <div class="container">
-      <h3 class="display-3 text-light text-center">Experiencia</h3>
+<aside class="container main centered mt-4 rounded">
+    <div class="row justify-content-center">
+      <div class="col-lg-8">
+        <h3 class="display-3 text-light text-center">Experiencia</h3>
+        <img src="../../../assets/experiencia.png" class="img-fluid rounded-circle img2 mx-auto" alt="Hernan Catalini, Desarrollador Web">
+      </div>
     </div>
-    <div class="container">
-      <p class=" fs-4 text-light lead">Por el momento no poseo experiencia laboral, pero estoy capacitandome constantemente para conseguir esa primer oportunidad. </p>
+
+    <div class="row justify-content-center">
+      <div class="col-auto">
+        <button type="button" class="btn btn-outline-light" routerLink="/nuevaexp" *ngIf="isLogged">Cargar Experiencia</button>
+      </div>
+      <div class="col-lg-10">
+      <table class="table">
+        <tbody>
+          <tr *ngFor="let Experiencia of expe">
+            <td class="text-light fs-5 align-bottom">{{Experiencia.nombreExp}}</td>
+            <td class="text-light fs-6 align-bottom">{{Experiencia.descripcionExp}}</td>
+            <td class="text-light" *ngIf="isLogged"><button type="button" class="btn bg-transparent" routerLink="/editexp/{{Experiencia.id}}"><i class="bi bi-pencil-square text-light"></i></button></td>
+            <td class="text-light" *ngIf="isLogged"><button type="button" class="btn bg-transparent" (click)="delete(Experiencia.id)"><i class="bi bi-trash text-light"></i></button></td>
+          </tr>
+        </tbody>
+      </table>
     </div>
+    </div>
+
+    
   </aside>
